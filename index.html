@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бібліотечний каталог</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Бібліотечний каталог</h1>
+  <p class="subtitle">Міська публічна бібліотека ім. Лесі Українки</p>
+</header>
+
+<main>
+  <section class="stats" aria-label="Статистика">
+    <div class="stat-card">
+      <span class="stat-label">Всього книг</span>
+      <span class="stat-val" id="s-total">0</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Доступно</span>
+      <span class="stat-val" id="s-avail">0</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Видано</span>
+      <span class="stat-val" id="s-taken">0</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Знайдено</span>
+      <span class="stat-val" id="s-found">0</span>
+    </div>
+  </section>
+
+  <section class="controls" aria-label="Фільтри">
+    <input type="text" id="search" placeholder="Пошук за назвою або автором...">
+    <select id="genre-filter">
+      <option value="">Всі жанри</option>
+      <option value="fiction">Художня</option>
+      <option value="history">Історія</option>
+      <option value="science">Наука</option>
+      <option value="poetry">Поезія</option>
+      <option value="philosophy">Філософія</option>
+    </select>
+    <select id="status-filter">
+      <option value="">Всі статуси</option>
+      <option value="available">Доступна</option>
+      <option value="taken">Видана</option>
+    </select>
+  </section>
+
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty">Нічого не знайдено</p>
+</main>
+
+<div class="modal-bg" id="modal-bg" role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="modal">
+    <button class="close-btn" id="close-modal" aria-label="Закрити">&#x2715;</button>
+    <h2 id="m-title"></h2>
+    <p class="modal-author" id="m-author"></p>
+    <table class="modal-table" id="m-rows"></table>
+    <button class="action-btn" id="m-action"></button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
